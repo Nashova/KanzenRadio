@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Radio Kanzen</title>
+
+	<meta name="author" content="Sabis.com.mx">
+	<meta name="description" content="Estacion de radio del grupo Kanzen">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/jquery-ui-1.10.3.custom.min.css">
+	<link rel="stylesheet" href="css/index.css">
+
+	<script src="js/modernizr.custom.76371.js"></script>
+	<script src="js/jquery-2.0.3.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/index.js"></script>
+
+	<!--[if lte IE 8]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->	
+	<!--[if lt IE 9]>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+</head>
+<body>
+
+<!--[if lt IE 7]>
+<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+<![endif]-->
+<aside id="reproductorContenedor">
+	<div id="logoKanzen"><span class="texto">KANZEN RADIO</span></div>
+	<div id="fechaHoraWidget">
+		<div id="fechaActual">
+			<span id="dia"></span>
+			<span id="mes"></span>
+			<span id="diaTexto"></span>
+			<div class="clear"></div>
+		</div>
+		<div id="horaActual">
+			<span id="hora"></span>
+			<span id="ampm"></span>
+		</div>
+	</div>
+	<div id="reproductor" class="">
+		<span id="play" class="botonReproductor ui-icon ui-icon-play deshabilitado">play</span>
+		<span id="pause" class="botonReproductor ui-icon ui-icon-pause">pause</span>
+		<span id="stop" class="botonReproductor ui-icon ui-icon-stop deshabilitado">stop</span>
+		<span id="volOff" class="botonReproductor ui-icon ui-icon-volume-off">volume-off</span>
+		<span id="volOn" class="botonReproductor ui-icon ui-icon-volume-on deshabilitado">volume-on</span>
+	</div>
+	<div id="informacion">
+		Radio: <span id="estatus">CARGANDO</span><span id="loadingImg"></span><BR>
+		Oyentes: <span id="oyentes">1</span> de <span id="maximoOyentes">500</span><br>
+		Bitrate: <span id="bitrate">128</span> Kbps<br>
+		Escuchas: <span id="cancion">Bob Sinclar ft Pitbull</span>
+	</div>
+	<div id="apagada">
+		La Radio Está: <span id="estatus">APAGADA</span><BR>
+	</div>
+
+</aside>
+<nav id="navegacionContenedor">
+<span class="seleccionado">Inicio</span>
+<span>Programación</span>
+<span>Noticias</span>
+<span>Nosotros</span>
+<span>Contacto</span>
+</nav>
+<section id="principalContenedor">
+	<article>
+	<h3>Lorem ipsum dolor sit amet</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse luctus gravida urna, vitae interdum tortor egestas id. Nulla imperdiet enim magna, nec tincidunt leo tincidunt eu. Nam molestie ultricies pretium. Nunc eget mi leo. Curabitur tincidunt leo ante, non bibendum ante ultricies sit amet. Aliquam quis faucibus risus, sed dignissim turpis. Nullam eu justo urna.</p>
+	<p>Cras ultrices, elit non mattis laoreet, velit eros pulvinar ligula, eu sagittis eros orci ut turpis. Proin sed consectetur mauris, ac ultrices dui. Suspendisse ut dui pulvinar, volutpat enim at, eleifend lorem. Aliquam lacinia libero in arcu pharetra, a ultrices dolor pulvinar. Curabitur lectus massa, volutpat sed pellentesque eu, pellentesque dictum dui. Ut et posuere justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer at lacus a lacus viverra venenatis ut sed mi. Sed scelerisque interdum ultricies.</p>
+	<p>Sed ante orci, rhoncus ac erat dapibus, eleifend consectetur risus. Nullam at ullamcorper erat. Duis eu scelerisque orci. Sed ipsum purus, convallis vel enim quis, ultrices aliquet ante. Duis id luctus massa. Sed eu semper ante. In id turpis nec sem consectetur varius eu vitae felis. Proin enim nunc, mattis tempor orci et, commodo posuere quam. Vestibulum porttitor auctor enim ut dignissim. Pellentesque eu nibh fermentum arcu accumsan dapibus. Sed sagittis ante sed ligula rhoncus vehicula.</p>
+	</article>
+	
+	Reproductor
+	http://play.radioknz.com.ar:8010
+
+</section>
+<footer>
+<span id="by">Hecho por:</span> <a href="http://sabis.com.mx" target="_blank">SaBiS.com.mx</a>
+</footer>
+</body>
+</html>
