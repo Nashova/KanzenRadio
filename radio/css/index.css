@@ -130,7 +130,7 @@ left: 23px;}
 #reproductor .botonReproductor{display: inline-block;width: 17px;cursor: pointer;border: 1px solid;border-radius: 3px;height: 17px;text-align: center;background-color: #444;margin: 0px 2px;}
 #reproductor .botonReproductor:hover{background-color:#200;}
 #reproductor .deshabilitado,#reproductor .deshabilitado:hover{background-color:#fff;cursor: default;}
-#reproductorContenedor #informacion{text-align: left;margin: 0 8px 10px 8px;padding: 5px;border: 1px solid #efe;box-shadow: 1px 1px 3px rgba(255, 0, 0, 0.8);background: #fff;border-radius: 0 0 5px 5px;color: #333;font-size: .7em;font-weight: 100;border-top: 0 none;z-index: 5;position: relative;}
+#reproductorContenedor #informacion{text-align: left;margin: 0 8px 10px 8px;padding: 5px;border: 1px solid #efe;box-shadow: 1px 1px 3px rgba(255, 0, 0, 0.8);background: #fff;border-radius: 0 0 5px 5px;color: #333;font-size: .7em;font-weight: 100;border-top: 0 none;z-index: 5;position: relative;word-wrap:break-word;}
 #reproductorContenedor #informacion span{font-weight: bold;color: rgba(7, 5, 56, 1);}
 #reproductorContenedor #informacion #estatus{}
 #reproductorContenedor #informacion #loadingImg{background: url(images/loading.gif);width: 1em;height: 1.1em;display: inline-block;background-size: 1em;margin: 0 0 0 10px;}
