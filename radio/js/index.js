@@ -11,7 +11,33 @@ window.onload = function(){
 	inicializaReproductor();
 	setInterval(refreshClock,60000);
 	iniciaAnimacion();
+	inicializaMenu();
 };
+// Funciones de navegación
+function inicializaMenu(){
+	transisionOut($("article"));
+	transisionIn($("#inicio"));
+	$("#inicioNav").click(function(){
+		$(".seleccionado").removeClass("seleccionado");
+		$(this).addClass("seleccionado");
+		transisionOut($("article"));
+		transisionIn($("#inicio"));
+	});
+	$("#programacionNav").click(function(){
+		$(".seleccionado").removeClass("seleccionado");
+		$(this).addClass("seleccionado");
+		transisionOut($("article"));
+		transisionIn($("#programacion"));
+	});
+}
+function transisionOut (objeto) {
+	objeto.hide();
+	// body...
+}
+function transisionIn (objeto) {
+	objeto.fadeIn();
+	// body...
+}
 /* Funciones de animación */
 function iniciaAnimacion(){
 	$("#logoKanzen").hide();
@@ -19,7 +45,6 @@ function iniciaAnimacion(){
 	$("#reproductor").hide();
 	$("#informacion").hide();
 	$("#navegacionContenedor span").hide();
-	
 	$("#reproductorContenedor").animate({left:0},1000,'easeOutElastic',function(){
 		$("#navegacionContenedor").animate({top:0},1000,"easeOutElastic",function(){
 			$("#navegacionContenedor span").each(function(){
@@ -37,10 +62,10 @@ function iniciaAnimacion(){
 
 /* Funciones del Widget de Fecha y hora */
 function generateClockWidget(){
-	mydate = new Date(); 
-	myday = mydate.getDay(); 
-	mymonth = mydate.getMonth(); 
-	myweekday= mydate.getDate(); 
+	mydate = new Date();
+	myday = mydate.getDay();
+	mymonth = mydate.getMonth();
+	myweekday= mydate.getDate();
 	myhours = mydate.getHours();
 	myminutes = mydate.getMinutes();
 	hour = myhours>12?myhours-12:myhours;
@@ -60,8 +85,8 @@ function refreshClock(){
 	$("#horaActual #ampm").text(horas>12?" PM ":" AM ");
 	dia= fecha.getDate();
 	if(parseInt($("#fechaActual #dia").text())!=dia){
-		myday = fecha.getDay(); 
-		mymonth = fecha.getMonth(); 
+		myday = fecha.getDay();
+		mymonth = fecha.getMonth();
 		$("#fechaActual #dia").text((""+dia).length<2?"0"+dia:dia);
 		$("#fechaActual #mes").text(meses[mymonth]);
 		$("#fechaActual #diaTexto").text(dias[myday]);
@@ -88,8 +113,8 @@ function inicializaReproductor(){
 	//refreshMetadata();
 	$("#reproductorContenedor #informacion").show();
 	$("#reproductorContenedor #apagada").hide();
-	setTimeout(refreshMetadata,1000);
-	setInterval(refreshMetadata,30000);
+//	setTimeout(refreshMetadata,1000);
+//	setInterval(refreshMetadata,30000);
 	radio1.addEventListener("playing",function(){
 		$("#loadingImg").hide();
 		$("#estatus").text("ENCENDIDA");
