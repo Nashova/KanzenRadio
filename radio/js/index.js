@@ -57,8 +57,7 @@ function iniciaAnimacion(){
 	$("#fechaHoraWidget").hide();
 	$("#reproductor").hide();
 	$("#informacion").hide();
-/*	$("#navegacionContenedor span").hide();
-*/	$("#reproductorContenedor").animate({left:0},1000,'easeOutElastic',function(){
+	$("#reproductorContenedor").animate({left:0},1000,'easeOutElastic',function(){
 		$("#navegacionContenedor").animate({top:0},1000,"easeOutElastic",function(){
 			$("#navegacionContenedor span").each(function(){
 				$(this).animate({top:"0px"},Math.floor((Math.random()*2000)+1),"easeOutElastic",function (argument) {
@@ -128,8 +127,8 @@ function inicializaReproductor(){
 	//refreshMetadata();
 	$("#reproductorContenedor #informacion").show();
 	$("#reproductorContenedor #apagada").hide();
-//	setTimeout(refreshMetadata,1000);
-//	setInterval(refreshMetadata,30000);
+	setTimeout(refreshMetadata,1000);
+	setInterval(refreshMetadata,30000);
 	radio1.addEventListener("playing",function(){
 		$("#loadingImg").hide();
 		$("#estatus").text("ENCENDIDA");
