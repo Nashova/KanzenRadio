@@ -48,6 +48,11 @@ a{cursor:pointer;}
     -moz-transform:rotate(360deg);
     -o-transform:rotate(360deg);
 }
+#reproductorContenedor , #navegacionContenedor ,#reproductorContenedor *, #navegacionContenedor *{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+}
 
 body{background: url("images/yin-yang-symbol1.jpg");background-repeat: no-repeat;background-color: black;background-position: 50% 0%;background-size: 100%;}
 

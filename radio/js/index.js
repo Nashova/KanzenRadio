@@ -7,7 +7,12 @@ var metadataUrl = "";
 /* Inicializacion de entorno */
 //$(document).ready(function(){
 window.onload = function(){
-	generateClockWidget();
+	document.onselectstart = function()
+	{
+	  return false;
+	}
+
+    generateClockWidget();
 	inicializaReproductor();
 	setInterval(refreshClock,60000);
 	iniciaAnimacion();
@@ -17,19 +22,25 @@ window.onload = function(){
 function inicializaMenu(){
 	transisionOut($("article"));
 	transisionIn($("#inicio"));
-	$("#inicioNav").click(function(){
+	$("#inicioNav").click(function(event){
 		if(!$(this).hasClass("seleccionado")){
 			$(".seleccionado").removeClass("seleccionado");
 			$(this).addClass("seleccionado");
 			transisionOut($("article"));
 			transisionIn($("#inicio"));
+			event.preventDefault();
+			return false;
 		}
 	});
 	$("#programacionNav").click(function(){
-		$(".seleccionado").removeClass("seleccionado");
-		$(this).addClass("seleccionado");
-		transisionOut($("article"));
-		transisionIn($("#programacion"));
+		if(!$(this).hasClass("seleccionado")){
+			$(".seleccionado").removeClass("seleccionado");
+			$(this).addClass("seleccionado");
+			transisionOut($("article"));
+			transisionIn($("#programacion"));
+			event.preventDefault();
+			return false;
+		}
 	});
 }
 function transisionOut (objeto) {
