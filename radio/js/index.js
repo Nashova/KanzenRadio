@@ -18,10 +18,12 @@ function inicializaMenu(){
 	transisionOut($("article"));
 	transisionIn($("#inicio"));
 	$("#inicioNav").click(function(){
-		$(".seleccionado").removeClass("seleccionado");
-		$(this).addClass("seleccionado");
-		transisionOut($("article"));
-		transisionIn($("#inicio"));
+		if(!$(this).hasClass("seleccionado")){
+			$(".seleccionado").removeClass("seleccionado");
+			$(this).addClass("seleccionado");
+			transisionOut($("article"));
+			transisionIn($("#inicio"));
+		}
 	});
 	$("#programacionNav").click(function(){
 		$(".seleccionado").removeClass("seleccionado");
@@ -44,11 +46,13 @@ function iniciaAnimacion(){
 	$("#fechaHoraWidget").hide();
 	$("#reproductor").hide();
 	$("#informacion").hide();
-	$("#navegacionContenedor span").hide();
-	$("#reproductorContenedor").animate({left:0},1000,'easeOutElastic',function(){
+/*	$("#navegacionContenedor span").hide();
+*/	$("#reproductorContenedor").animate({left:0},1000,'easeOutElastic',function(){
 		$("#navegacionContenedor").animate({top:0},1000,"easeOutElastic",function(){
 			$("#navegacionContenedor span").each(function(){
-				$(this).show().animate({top:"0px"},Math.floor((Math.random()*2000)+1),"easeOutElastic");
+				$(this).animate({top:"0px"},Math.floor((Math.random()*2000)+1),"easeOutElastic",function (argument) {
+					$("#inicioNav").addClass("seleccionado");
+				});
 			});
 		});
 		$("#logoKanzen").fadeIn(600,function(){
