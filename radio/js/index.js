@@ -5,13 +5,10 @@ var radio1 = new Audio();
 var metadataUrl = "";
 
 /* Inicializacion de entorno */
-//$(document).ready(function(){
 window.onload = function(){
-	document.onselectstart = function()
-	{
+	document.onselectstart = function(){
 	  return false;
 	}
-
     generateClockWidget();
 	inicializaReproductor();
 	setInterval(refreshClock,60000);
@@ -23,34 +20,32 @@ function inicializaMenu(){
 	transisionOut($("article"));
 	transisionIn($("#inicio"));
 	$("#inicioNav").click(function(event){
-		if(!$(this).hasClass("seleccionado")){
-			$(".seleccionado").removeClass("seleccionado");
-			$(this).addClass("seleccionado");
-			transisionOut($("article"));
-			transisionIn($("#inicio"));
-			event.preventDefault();
-			return false;
-		}
+		return clicMenu(event,$(this),$("#inicio"));
 	});
 	$("#programacionNav").click(function(){
-		if(!$(this).hasClass("seleccionado")){
-			$(".seleccionado").removeClass("seleccionado");
-			$(this).addClass("seleccionado");
-			transisionOut($("article"));
-			transisionIn($("#programacion"));
-			event.preventDefault();
-			return false;
-		}
+		return clicMenu(event,$(this),$("#programacion"));
+	});
+	$("#noticiasNav").click(function(){
+		return clicMenu(event,$(this),$("#noticias"));
+	});
+	$("#nosotrosNav").click(function(){
+		return clicMenu(event,$(this),$("#nosotros"));
+	});
+	$("#contactoNav").click(function(){
+		return clicMenu(event,$(this),$("#contacto"));
 	});
 }
-function transisionOut (objeto) {
-	objeto.hide();
-	// body...
+function clicMenu (evento,boton,activar) {
+	if(!boton.hasClass("seleccionado")){
+		$(".seleccionado").removeClass("seleccionado");
+		boton.addClass("seleccionado");
+		transisionOut($("article"));
+		transisionIn(activar);
+		evento.preventDefault();
+	}
+	return false;
 }
-function transisionIn (objeto) {
-	objeto.fadeIn();
-	// body...
-}
+
 /* Funciones de animación */
 function iniciaAnimacion(){
 	$("#logoKanzen").hide();
@@ -61,7 +56,7 @@ function iniciaAnimacion(){
 		$("#navegacionContenedor").animate({top:0},1000,"easeOutElastic",function(){
 			$("#navegacionContenedor span").each(function(){
 				$(this).animate({top:"0px"},Math.floor((Math.random()*2000)+1),"easeOutElastic",function (argument) {
-					$("#inicioNav").addClass("seleccionado");
+					setTimeout('$("#inicioNav").addClass("seleccionado")',500);
 				});
 			});
 		});
@@ -71,7 +66,12 @@ function iniciaAnimacion(){
 			});
 		});
 	});
-	$("#principalContenedor").animate({width:"80%",height:"80%",top:"60px",right:"2%"},2000,"easeInElastic");
+}
+function transisionOut (objeto) {
+	objeto.hide();
+}
+function transisionIn (objeto) {
+	objeto.fadeIn();
 }
 
 /* Funciones del Widget de Fecha y hora */
@@ -123,8 +123,6 @@ function inicializaReproductor(){
 	radio1.autoplay = "autoplay";
 	radio1.src= 'http://play.radioknz.com.ar:8010/;stream.mp3';
 	metadataUrl = "meta2.php";
-	//radio1.src = '1.mp3';
-	//refreshMetadata();
 	$("#reproductorContenedor #informacion").show();
 	$("#reproductorContenedor #apagada").hide();
 	setTimeout(refreshMetadata,1000);
