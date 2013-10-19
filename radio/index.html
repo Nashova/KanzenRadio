@@ -23,6 +23,10 @@
 	<script src="js/jquery.easing.1.3.js"></script>
 	<script src="js/index.js"></script>
 
+	<!--[if IE]>>
+	<link rel="stylesheet" href="css/ie.css">
+	<![endif]-->
+
 	<!--[if lte IE 8]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -186,7 +190,29 @@
 		<h3>Muy Pronto</h3>
 	</article>
 	<article id="contacto">
-			<h3>Muy Pronto</h3>
+		<p>En KANZEN RADIO nos interesa tú opinión y tus peticiones, si tienes algo que decir puedes usar este espacio.<br><br>
+		Estaremos encantados de escuchar de tí.
+		</p>
+		<div id="formularioContacto">
+			<div class="contenedorMedio">
+				<input type="text" name="nombre" id="nombre" value=""/>
+				<span id="etiquetaNombre">NOMBRE:</span>
+			</div>
+			<div class="contenedorMedio">
+				<input type="text" name="correo" id="correo" value=""/>
+				<span id="etiquetaCorreo">CORREO:</span>
+			</div>
+			<div class="contenedorCompleto">
+				<textarea name="mensaje"></textarea>
+				<span id="etiquetaMensaje">MENSAJE:</span>
+			</div>
+			<div class="contenedorLinea">
+				<a id="limpiar" class="boton">Limpiar</a>
+				<a id="enviar" class="boton">Enviar</a>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
 	</article>
 </section>
 <footer>

@@ -1,26 +1,8 @@
 @font-face{font-family: sansation;src: url(fonts/Sansation_Regular.ttf);}
 @font-face{font-family: sansation;src: url(fonts/Sansation_Bold.ttf);font-weight:bold;}
 @font-face{font-family: sansation;src: url(fonts/Sansation_Italic.ttf);font-style:italic;}
-@font-face{font-family: sansation;src: url(fonts/Sansation_Bold_Italic.ttf);font-style:italic;font-weight:bold;}
 @font-face{font-family: coolvetica;src: url(fonts/coolvetica_rg.ttf);}
 @font-face{font-family: harakiri;src: url(fonts/Harakiri.ttf);}
-
-@keyframes myfirst{
-    0%   {background: red; left:0px; top:0px;}
-    25%  {background: yellow; left:200px; top:0px;}
-    50%  {background: blue; left:200px; top:200px;}
-    75%  {background: green; left:0px; top:200px;}
-    100% {background: red; left:0px; top:0px;}
-}
-
-@-webkit-keyframes myfirst{
-    0%   {background: red; left:0px; top:0px;}
-    25%  {background: yellow; left:200px; top:0px;}
-    50%  {background: blue; left:200px; top:200px;}
-    75%  {background: green; left:0px; top:200px;}
-    100% {background: red; left:0px; top:0px;}
-}
-
 
 *{font-family:sansation;cursor:default;text-shadow: rgb(97, 97, 97) 0.1em 0.01em 0.01em;}
 a{cursor:pointer;}
@@ -160,6 +142,83 @@ left: 23px;}
 #reproductorContenedor #apagada{display:none; text-align: left;margin: 0 8px 10px 8px;padding: 5px;border: 1px solid #efe;box-shadow: 1px 1px 3px rgba(255, 0, 0, 0.8);background: #fff;border-radius: 0 0 5px 5px;color: #333;font-size: .7em;font-weight: 100;border-top: 0 none;z-index: 5;position: relative;}
 #reproductorContenedor #apagada span{font-weight: bold;color: rgba(7, 5, 56, 1);}
 
+/* Bloque de forma de contacto */
+#contacto {width: 100%;
+height: 100%;
+overflow-x: hidden;
+overflow-y: auto;}
+#formularioContacto {width: 60%;
+border: 1px solid;
+margin: 5px;
+min-height: 350px;
+max-height: 100%;
+border-radius: 5px;
+display: block;
+padding: 50px 0 50px 20px;
+box-shadow: 4px 4px 4px black;
+position: relative;}
+#formularioContacto .contenedorCompleto{display: block;
+width: 100%;
+height: 200px;
+z-index: 10;
+margin-bottom: 25px;
+position: relative;
+float: left;}
+#formularioContacto .contenedorMedio{display: block;
+width: 48%;
+height: 50px;
+z-index: 10;
+margin-bottom: 30px;
+position: relative;
+float: left;}
+#formularioContacto .contenedorLinea{display: block;
+width: 48%;
+height: 50px;
+z-index: 10;
+margin-bottom: 30px;
+position: relative;
+float: left;}
+#formularioContacto span{display: block;
+z-index: 10;
+font-weight: 900;
+position: relative;
+color: rgb(155, 2, 2);
+text-shadow: 2px 2px 2px #D5D5DE, 1px 1px 0px white, 0px 1px 0px white,1px 0px 0px white,0px 0px 0px white;}
+#formularioContacto span.activo {top:-20px;}
+#formularioContacto #etiquetaNombre{}
+#formularioContacto #etiquetaCorreo{}
+#formularioContacto #etiquetaMensaje{}
+#formularioContacto textarea{width: 90%;
+height: 180px;
+position: absolute;
+z-index: 20;
+resize: none;
+padding: 5px 10px;
+font-size: 1.2em;
+box-shadow: 4px 4px 0px black;
+border: 1px solid;}
+#formularioContacto input{display: block;
+position: absolute;
+z-index: 20;
+background: white;
+width: 88%;
+height: 80%;
+padding: 5px 10px;
+font-size: 1.4em;
+box-shadow: 4px 4px 0px black;
+text-shadow: 1px 1px 0px black,0px 1px 0px black,1px 0px 0px black,0px 0px 0px black,1px 1px 1px black;
+border: 1px solid;}
+#formularioContacto #nombre{}
+#formularioContacto #correo{}
+#formularioContacto #mensaje{}
+#formularioContacto a{}
+#formularioContacto .boton{}
+#formularioContacto #limpiar{}
+#formularioContacto #enviar{}
+
+/**
+ * Bloque de diseño responsivo
+ */
 @media only screen and (max-width:1100px) {
     #navegacionContenedor {
         width: 80%;
